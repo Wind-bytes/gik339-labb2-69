@@ -23,7 +23,7 @@
     flex-direction: row;
 
 }
-.myDiv {
+#divId {
   color: crimson;
 }
 .break {
