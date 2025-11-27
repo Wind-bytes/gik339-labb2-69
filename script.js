@@ -60,13 +60,16 @@ allTextInputs.forEach(input => {
     input.addEventListener("blur", handleInputEvent); 
 });
 
-// --- Eventlyssnare för knappen ---
-// När knappen klickas ska div-elementet försvinna
-removeBtn.addEventListener("click", function() {
-    if (myDiv.style.display === "none" || myDiv.style.display === "") {
-        myDiv.style.display = "block"; // show it again
-    } else {
-        myDiv.style.display = "none"; // hide it
-    }
-});
+removeBtn.addEventListener('click', () => {
+  // Töm alla textfält
+  allTextInputs.forEach(input => input.value = '');
 
+ 
+  myDiv.innerHTML = '';
+  myDiv.style.color = '';      
+  myDiv.style.border = '';
+  myDiv.style.borderRadius = '';
+  myDiv.style.padding = '';
+  myDiv.style.visibility = 'visible';
+
+});
