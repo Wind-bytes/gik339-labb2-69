@@ -1,4 +1,24 @@
 
+function spawnHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.textContent = '❤';
+  const startX = Math.random() * window.innerWidth;
+  const duration = 3000 + Math.random() * 3000;
+  const size = 16 + Math.random() * 32;
+
+  heart.style.left = startX + 'px';
+  heart.style.animationDuration = duration + 'ms';
+  heart.style.fontSize = size + 'px';
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, duration);
+}
+
+setInterval(spawnHeart, 300);
 
 // Hämtade element
 const myDiv = document.querySelector(".myDiv");
@@ -25,6 +45,13 @@ divStyleCheckbox.addEventListener("change", function(e) {
         myDiv.style.borderRadius = "10px";
         myDiv.style.padding = "10px";
     } 
+    else {
+        console.log("Unchecked");
+        myDiv.style.border = "";       // removes the border
+        myDiv.style.borderRadius = ""; // removes border radius
+        myDiv.style.padding = "";      // removes padding
+       
+    }
 });
 
 // Koppla funktionen till alla textfält (input-event när användaren skriver)
@@ -36,6 +63,10 @@ allTextInputs.forEach(input => {
 // --- Eventlyssnare för knappen ---
 // När knappen klickas ska div-elementet försvinna
 removeBtn.addEventListener("click", function() {
-    myDiv.style.display = "none"; // tar bort div från visning
+    if (myDiv.style.display === "none" || myDiv.style.display === "") {
+        myDiv.style.display = "block"; // show it again
+    } else {
+        myDiv.style.display = "none"; // hide it
+    }
 });
 
