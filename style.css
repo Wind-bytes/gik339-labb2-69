@@ -42,7 +42,7 @@ body {
   position: fixed;
   font-size: 24px;
   color: crimson;
-  pointer-events: none; /* prevents clicks from being blocked */
+  pointer-events: none;
   animation: floatUp linear forwards;
 }
 
@@ -57,7 +57,7 @@ body {
   }
 }
 
-.centerthefuckingdiv {
+.center {
     display: flex;
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
