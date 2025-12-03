@@ -37,16 +37,11 @@ inputCheckbox.addEventListener('change', (e) => {
 })
 
 inputButton.addEventListener('click', () => {
-  inputField1.value = '';
-  inputField2.value = '';
-  inputDiv.style.border = '';
-  inputDiv.style.border.visibility = 'hidden';
-  inputDiv.style.backgroundColor = 'black';
-  inputDiv.innerHTML = '';
+  inputDiv.remove()
 })
 
 
-// Lite kul
+// Lite kul (chat-gpt)
 function spawnHeart() {
   const heart = document.createElement('div');
   heart.className = 'heart';
