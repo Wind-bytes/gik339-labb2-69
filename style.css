@@ -46,6 +46,13 @@ body {
   animation: floatUp linear forwards;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; 
+}
+
 @keyframes floatUp {
   from {
     transform: translateY(100vh) scale(1);
@@ -55,11 +62,4 @@ body {
     transform: translateY(-10vh) scale(0.5);
     opacity: 0;
   }
-}
-
-.center {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    height: 10vh; 
 }
