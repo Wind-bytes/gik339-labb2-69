@@ -1,8 +1,17 @@
-const inputCheckbox = document.getElementById('divStyle');
-const inputField1 = document.getElementById('color');
-const inputField2 = document.getElementById('content');
-const inputButton = document.getElementById('button');
-const inputDiv = document.getElementById('inputDiv');
+// 1. getElementById
+const inputCheckbox = document.getElementById('divStyle');  
+
+// 2. getElementsByClassName   (returns a collection → pick index 0)
+const inputField1 = document.getElementsByClassName('textfield')[0];
+
+// 3. getElementsByTagName     (the "content" field is an <input>)
+const inputField2 = document.getElementsByTagName('input')[1];
+
+// 4. querySelector            (single element, first match)
+const inputButton = document.querySelector('#button');
+
+// 5. querySelectorAll         (static list → pick first match)
+const inputDiv = document.querySelectorAll('#inputDiv')[0];
 
 function eventListener(e) {
   console.log(e.target)
@@ -42,22 +51,22 @@ inputButton.addEventListener('click', () => {
 
 
 // Lite kul (chat-gpt)
-function spawnHeart() {
-  const heart = document.createElement('div');
-  heart.className = 'heart';
-  heart.textContent = '❤';
-  const startX = Math.random() * window.innerWidth;
-  const duration = 3000 + Math.random() * 3000;
-  const size = 16 + Math.random() * 32;
-
-  heart.style.left = startX + 'px';
-  heart.style.animationDuration = duration + 'ms';
-  heart.style.fontSize = size + 'px';
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, duration);
-}
-setInterval(spawnHeart, 300);
+//function spawnHeart() {
+//  const heart = document.createElement('div');
+//  heart.className = 'heart';
+//  heart.textContent = '❤';
+//  const startX = Math.random() * window.innerWidth;
+//  const duration = 3000 + Math.random() * 3000;
+//  const size = 16 + Math.random() * 32;
+//
+//  heart.style.left = startX + 'px';
+//  heart.style.animationDuration = duration + 'ms';
+//  heart.style.fontSize = size + 'px';
+//
+//  document.body.appendChild(heart);
+//
+//  setTimeout(() => {
+//    heart.remove();
+//  }, duration);
+//}
+//setInterval(spawnHeart, 300);
